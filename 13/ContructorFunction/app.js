@@ -21,3 +21,6 @@ Person.prototype.sayHello=function() {
 const p1 = new Person('Vivek', 23);
 const p2 = new Person('Garvit', 24);
 const p3 = new Person('Tushar', 22);
+p1.sayHello();
+p2.sayHello();
+p3.sayHello();
