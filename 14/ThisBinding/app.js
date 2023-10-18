@@ -1,7 +1,12 @@
+/* Binding:
+Implicit binding
+Explicit binding
+new keyword
+Default(window object one)
+*/
 
 
-
-// Implicit Binding - Autmatically done by the JS Engine
+// Implicit Binding - Automatically done by the JS Engine
 
 const person = {
     name: 'Sabeel',
@@ -14,7 +19,7 @@ const person = {
 
 
 // Explicit Binding
-
+//2 ways of doing this either use call or bind
 
 function fun(name, age) {
     console.log(this);
@@ -34,7 +39,7 @@ const a = {
 
 // fun.call(a, 'Vivek', 24);
 
-const f = fun.bind(a);
+const f = fun.bind(a);//in bind we can store it and later use it
 // 100000 line of code
 
 f('Garvit', 25);

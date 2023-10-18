@@ -59,9 +59,6 @@ class RacingCar extends Car{
 }
 
 // let c1 = new Car('Audi', 'Black', 2000000);
-
-
 const r1 = new RacingCar('BMW', 'red', 300000, 400, true);
 
-
-//1: Now whenever we will be calling the "Racing Car" class we must intialize all the properties of parent class "Car" also
+//1: Now whenever we will be calling the "Racing Car" class we must initialize all the properties of parent class "Car" also so super will do so 

@@ -53,12 +53,12 @@
 // console.log(evenNums);
 
 
-// --------------------------------sort
+// --------------sort------------------------
 
 const arr = [1, 2, 3, 99, 11, 10, 12, 0, 32, 78];
 
 arr.sort(function (a, b) {
-    return b - a;
+    return b - a;//this will give decreasing array and "a - b" will give increasing array
 });
 
 console.log(arr);
