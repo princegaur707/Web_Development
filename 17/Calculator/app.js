@@ -9,8 +9,8 @@ for (let button of buttons) {//we are adding eventlistener to every  button via 
         if (buttonText === 'C') {
             screen.value = "";
         }
-        else if (buttonText === 'x') {
-            screen.value += '*';
+        else if (buttonText === '←') {
+            screen.value = screen.value.slice(0, -1);
         }
         else if (buttonText === '=') {
 
@@ -28,4 +28,3 @@ for (let button of buttons) {//we are adding eventlistener to every  button via 
     
     });
 }
-

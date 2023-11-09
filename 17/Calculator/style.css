@@ -17,8 +17,9 @@ h1{
 
 #screen{
     display: block;
-    font-size: 2.6rem;
-    margin: 5px auto;
+    font-size: 2rem;
+    margin: auto auto;
+    padding: 5px 5px;
 }
 
 #screen:focus{
@@ -40,7 +41,7 @@ td{
 }
 
 
-
+/* when the key will be pressed it will scalled to 0.8 for sec */
 td:active{
     transform: scale(0.85);
 }
