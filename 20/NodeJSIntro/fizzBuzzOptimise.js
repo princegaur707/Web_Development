@@ -1,6 +1,4 @@
 
-
-
 function fizzBuzzOptimise(num) {
     
     let cnt3 = 1;
