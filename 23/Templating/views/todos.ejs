@@ -1,0 +1,18 @@
+<%- include('./partials/header') %>
+<%- include("./partials/navbar") %>
+
+    <h1>My Todos</h1>
+
+
+    <!-- <h2><%=todos%></h2> -->
+
+
+    <ul>
+        <%for(let todo of todos){%>
+            <li><%=todo%></li>
+        <%}%>
+    </ul>
+
+<%- include('./partials/footer') %>
+
+    

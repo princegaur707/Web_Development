@@ -28,7 +28,7 @@ fs.readFile(F1, (err, data) => {
         ans = ans.join('\n');
        
         fs.writeFile(F3, ans, { encoding: 'utf-8', flag: 'w' }, (err) => {
-            if (err) throw err;
+            if (err) throw err;//throw err will get it exit from here and next line will not run
             console.log('File Written Successfully');
         })
     })

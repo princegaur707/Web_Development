@@ -1,0 +1,16 @@
+<%- include('./partials/header') %>
+<%- include("./partials/navbar") %>
+
+    <!-- <h1>My favourite random Number <%= "hello".toUpperCase()  %>  </h1> -->
+    <h1>My favourite random Number <%= randomNum %>  </h1>
+   
+    <%if(randomNum%2===0){%>
+        <h1>Even Number</h1>
+   <% }else{ %>
+        <h1>Odd Number!!</h1>
+   <% }%>
+
+
+<%- include('./partials/footer') %>
+
+
