@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 
 
 // Connecting with the movieApp Database
-mongoose.connect('mongodb://localhost:27017/movieApp')
+mongoose.connect('mongodb://localhost:27017/movieApp')//movieApp named databased will be created if not present
     .then(() => console.log('Connection Open'))
     .catch((err) => console.log(err));
 
 
-// Maps the document comming from mongodb database into usable js object
+// Maps the document coming from mongodb database into usable js object
 const movieSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -34,15 +34,18 @@ const movieSchema = new mongoose.Schema({
     }
 });
 
-const Movie = mongoose.model('Movie', movieSchema);
-
+const Movie = mongoose.model('Movie', movieSchema);//general practice for naming model: singular, first letter is capital
+//This model represent collection in a database
+//Provide methods to work with collection
+//To define a model we need to have a schema first
+//This line will automatically create collection with name movies(first letter small, plural)
 
 const ironman = new Movie({ name: 'Ironman', year: 2010, rating: 8.9, isWatched: true });
 
 // ironman.save()
 //     .then((m) => {
 //         console.log(m);
-//         console.log('Saved Succeccfully');
+//         console.log('Saved Successfully');
 //     })
 //     .catch((err) => {
 //         console.log(err);
@@ -97,7 +100,10 @@ const ironman = new Movie({ name: 'Ironman', year: 2010, rating: 8.9, isWatched:
 //         console.log('Saved');
 //     })
 
-
+//create method will return query
+//query: this is thenable object it means it will partially work as promise so, 
+//then function can work only not catch
+//For more details: https://mongoosejs.com/docs/queries.html
 
 
 

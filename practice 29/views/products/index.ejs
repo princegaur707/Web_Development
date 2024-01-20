@@ -1,0 +1,19 @@
+<% layout('layouts/boilerplate') -%>
+<!-- code written under above command will be added to boilerplate -->
+
+
+<div class="row products">
+    <% for(let product of products){%>
+        <div class="col-lg-4 mb-3"><!--Four units for one column  -->
+            <div class="card text-center shadow mx-auto" style=" width: 18rem;">
+                <img src="<%= product.img %>" class="card-img-top" alt="item image">
+                <div class="card-body">
+                <h5 class="card-title"><%= product.name %></h5>
+                <h5 class="card-title">$<%= product.price %></h5>
+                <p class="card-text desc"><%= product.desc %></p>
+                <a href="/products/<%=product._id%>" class="btn btn-info btn-sm">Buy Now</a>
+                </div>
+            </div> 
+        </div>
+    <% } %>
+</div>

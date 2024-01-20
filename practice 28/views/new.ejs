@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Page</title>
+    <style>
+        form{
+            width: 500px;
+            padding: 16px;
+            margin: 30px auto;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.26);
+        }
+        .form-control label{
+            display:block;
+            font-weight: 1.6 rem;
+            font-size: 1.5rem;
+        }
+        .form-control input{
+            display: block;
+            font-size: 1.5rem;
+            width: 90%;
+        }
+        .form-control textarea{
+            width: 90%;
+        }
+        .form-control button{
+            margin: auto ;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Add New Product</h1>
+    
+    <form action="/products" method = "POST">
+        <div class = "form-control">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div class = "form-control">
+            <label for="price">Price</label>
+            <input type="number" name="price" id="price">
+            <!-- (Above)String will not be taken as input as we are using 
+            type as number, if we will use type as string typecasting will happen-->
+            
+        </div>
+        <div class = "form-control">
+            <label for="desc">Description</label>
+            <textarea name="desc" id="desc" cols="30" rows="5"></textarea>
+            
+        </div>
+        <div class="form-control">
+            <button>Add Product</button>
+        </div>
+    </form>
+
+</body>
+</html>

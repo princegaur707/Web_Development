@@ -43,7 +43,7 @@ router.get('/products/:id/edit', async (req, res) => {
     res.render('products/edit', { product });
 });
 
-router.patch('/products/:id', async (req, res) => {
+router.patch('/products/:id/', async (req, res) => {
     
     const { id } = req.params;
     const { name, price, img, desc } = req.body;

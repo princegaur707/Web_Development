@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 
-mongoose.connect('mongodb://localhost/relationshipDB')
+mongoose.connect('mongodb://localhost/relationship')
     .then(() => console.log('DB Connected'));
 
 const userSchema = new mongoose.Schema({
@@ -50,4 +50,4 @@ async function addAddress(id) {
 
 }
 
-addAddress('618d2913e5b970608075a9b4');
+addAddress('65a7a8d62bd777aefa8fd07f');

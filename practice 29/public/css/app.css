@@ -1,0 +1,22 @@
+:root{
+    --main-color: #219ebc;
+}
+
+main{
+    margin-top: 5.5rem;
+}
+
+.products .card img{
+    height: 190px;
+    padding: 10px;
+}
+
+.products .card .desc{
+    height: 100px;
+    overflow: hidden;
+}
+
+.products .btn{
+    background-color: var(--main-color);
+    color: white;
+}

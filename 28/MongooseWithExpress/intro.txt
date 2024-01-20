@@ -1,0 +1,18 @@
+
+
+
+
+
+
+
+                    ShopApp --- DATABASE name
+                    
+
+    ShopApp may contain multiple models like Product, User, Review, Order
+
+    Here, we have made Product only
+
+    
+Product -> name, price, description
+
+User -> name, password
