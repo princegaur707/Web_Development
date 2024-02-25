@@ -1,6 +1,5 @@
 const { productSchema,reviewSchema } = require('./schemas');
 
-
 module.exports.validateProduct = (req, res, next) => {
     
     const { name, img, desc, price } = req.body;
@@ -15,7 +14,6 @@ module.exports.validateProduct = (req, res, next) => {
 
 }
 
-
 module.exports.validateReview = (req,res,next) => {
     
     const { rating, comment } = req.body;
@@ -28,5 +26,3 @@ module.exports.validateReview = (req,res,next) => {
     }
     next();
 }
-
-

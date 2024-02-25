@@ -72,7 +72,7 @@ router.post('/login',
             redirectUrl.pop();
             redirectUrl = redirectUrl.join('/');
         }
-
+        console.log(req.session);
         delete req.session.returnUrl;
         res.redirect(redirectUrl);
 });

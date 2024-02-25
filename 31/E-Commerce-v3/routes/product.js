@@ -24,7 +24,7 @@ router.get('/products/new', (req, res) => {
     }  
 });
 
-router.post('/products',validateProduct,async (req, res) => {
+router.post('/products', validateProduct, async (req, res) => {
     
     try {
         const { name, img, desc, price } = req.body;

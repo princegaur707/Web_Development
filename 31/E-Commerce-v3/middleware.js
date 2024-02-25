@@ -1,13 +1,12 @@
 const { productSchema,reviewSchema } = require('./schemas');
 
-
 module.exports.validateProduct = (req, res, next) => {
     
     const { name, img, desc, price } = req.body;
     const { error} = productSchema.validate({ name, img, price, desc });
 
     if (error) {
-        const msg = error.details.map((err)=>err.message).join(',')
+        const msg = error.details.map((err)=>err.message).join(',')//multiple errors possible so joining them 
         return res.render('error', { err: msg });
     }
 

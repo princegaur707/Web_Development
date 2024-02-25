@@ -27,6 +27,7 @@ app.get('/setcookie', (req, res) => {
 app.get('/greet', (req, res) => {
 
     const { username } = req.cookies;
+    console.log(req.cookies);
 
     res.send(`Hey there ${username}!!`);
 });
