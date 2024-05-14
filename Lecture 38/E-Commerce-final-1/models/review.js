@@ -16,6 +16,6 @@ const reviewSchema = new mongoose.Schema({
 },{timestamps:true});
 //helpul for getting timestamp of review
 
-const Review = mongoose.model('Review', reviewSchema)
+const Review = mongoose.model('Review', reviewSchema);
 
 module.exports = Review;

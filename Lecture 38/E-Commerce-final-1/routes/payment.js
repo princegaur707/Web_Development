@@ -1,4 +1,4 @@
-const express = require('express')
+const express = require('express');
 const router = express.Router();
 const request = require('request');
 const jsSHA = require('jssha');
@@ -34,7 +34,7 @@ router.post('/payment_gateway/payumoney', isLoggedIn, (req, res) => {
     //We have to additionally pass merchant key to API so remember to include it.
     pay.key =  process.env.MERCHANT_KEY //store it in different file;
     pay.surl = 'http://localhost:5000/payment/success';
-    pay.furl = 'https://localhost:5000/payment/fail';
+    pay.furl = 'http://localhost:5000/payment/fail';
     pay.hash = hash;
 
     //Making an HTTP/HTTPS call with request

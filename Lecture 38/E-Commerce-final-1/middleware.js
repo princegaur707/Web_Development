@@ -4,6 +4,10 @@ const {productSchema, reviewSchema} = require('./schemas');
 module.exports.isLoggedIn = (req, res, next) => {
 
     if(req.xhr && !req.isAuthenticated()){
+    	if(req.session.returnUrl) {
+    		delete req.session.returnUrl;
+    	}
+    	req.flash('error', 'Please login to continue');
         return res.status(401).json({msg:'You need to login first'});
         //401-> unauthorized user
     }
@@ -21,6 +25,7 @@ module.exports.isLoggedIn = (req, res, next) => {
 
 
 module.exports.validateProduct = (req, res, next) => {
+	const {id} = req.params;
     const{name, img, desc, price} = req.body;
     const{error} = productSchema.validate({name, img, price, desc});
     //validate is provided by Joi

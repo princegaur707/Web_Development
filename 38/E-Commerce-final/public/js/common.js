@@ -33,7 +33,7 @@ async function likeButton(productid,btn) {
 
 for (let btn of allLikeButton) {
     btn.addEventListener('click', () => {
-       const productid = btn.getAttribute('product-id')
+       const productid = btn.getAttribute('product-id');
         likeButton(productid,btn);
     })
 }

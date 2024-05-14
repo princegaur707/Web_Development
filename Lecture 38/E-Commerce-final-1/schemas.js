@@ -1,5 +1,5 @@
 const BaseJoi = require('joi');
-sanitizeHTML = require('sanitize-html');
+const sanitizeHTML = require('sanitize-html');
 
 const extension = (joi) => {
     return {

@@ -11,22 +11,22 @@ const userSchema = new mongoose.Schema({
         type: String, 
         default: 'buyer'
     },
-    wishList: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Product'//ref tell in which model to look
-        }
-    ],
     cart: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Product'
+            ref: 'Product'//ref tell in which model to look
         }
     ],
     orders: [
         {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Order'
+        }
+    ],
+    wishList: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Product'
         }
     ]
 });

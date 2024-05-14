@@ -20,8 +20,8 @@ async function likeButton(productid, btn) {
             btn.children[0].classList.remove('fas');
             btn.children[0].classList.add('far');
         } else {
+			btn.children[0].classList.add('fas');
             btn.children[0].classList.remove('far');
-            btn.children[0].classList.add('fas');
         }
         // console.log(response);
     }

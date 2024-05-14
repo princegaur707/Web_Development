@@ -22,8 +22,8 @@ const productRoutes = require('./routes/product');
 const reviewRoutes = require('./routes/review');
 const authRoutes = require('./routes/auth');
 const cartRoutes = require('./routes/cart');
-const paymentRoutes = require('./routes/payment')
-
+const paymentRoutes = require('./routes/payment');
+const orderRoutes = require('./routes/order');
 //APIs
 const productApis = require('./routes/api/productapi');
 
@@ -63,20 +63,28 @@ app.use(helmet({contentSecurityPolicy:false}));//false to ignore for now
 //       replaceWith: '12346789',
 //     }),
 //   );
-
+// async function insert() {
+//     await User.create({
+//         username: 'testing1',
+//         email: 'testing1@gmail.com',
+//         role: 'seller',
+//         password:'1234'
+//     })
+// }
+// insert();
 const secret = process.env.SECRET || 'weneedsomebettersecret'
 
 
 const store = MongoStore.create({
-    store: secret,
+    secret: secret,
     mongoUrl: dbUrl, 
-    touchAfter: 24 * 3600//store the session for 24 hours
+    touchAfter: 24 * 3600,//store the session for 24 hours
 });
 
 const sessionConfig = {
-    store,//storing the sesion in mongoDB, adv: even if we close session we remain logged in
+    store,//storing the session in mongoDB, adv: even if we close session we remain logged in
     name:'session',//providing different name to avoid default
-    secret,
+    secret: secret,
     resave: false,
     saveUninitialized: true,
     cookie: {
@@ -120,15 +128,16 @@ app.use((req, res, next) => {
 app.use('/products', productRoutes);//now this will run only for '/products' one
 app.use(reviewRoutes);
 app.use(authRoutes);
-app.use(productApis);
-app.use(cartRoutes);
+app.use('/product', productApis);
+app.use('/user', cartRoutes);
 app.use(paymentRoutes);
+app.use(orderRoutes);
 
 
 app.all('*', (req, res) => {//fallback: In case request do not matches with any route
     //'all' will work for all types of request get, post, patch etc.
     res.render('error', {err: 'You are requesting a wrong url!!!'});
-})
+});
 
 const port = process.env.PORT || 5000;
 

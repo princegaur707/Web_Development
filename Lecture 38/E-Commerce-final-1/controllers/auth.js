@@ -1,4 +1,8 @@
+const User = require('../models/user');
 module.exports.registerForm = (req, res) => {
+	if(req.user) {
+		return res.redirect('/products');
+	}
     res.render('auth/signup');
 }
 

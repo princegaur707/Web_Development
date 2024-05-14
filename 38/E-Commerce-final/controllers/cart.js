@@ -23,5 +23,5 @@ module.exports.addToCart=async(req, res) => {
 
     await user.save();
 
-    res.redirect('/user/cart');
+	res.redirect('/user/cart');
 }

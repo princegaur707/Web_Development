@@ -21,7 +21,7 @@ router.post('/:productid/like',isLoggedIn,async(req, res) => {
 
 
     res.send('LIKE API');
-})
+});
 
 
 

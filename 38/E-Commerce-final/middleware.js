@@ -10,7 +10,7 @@ module.exports.isLoggedIn = (req, res, next) => {
             delete req.session.returnUrl;
         }
         req.flash('error', 'Please login to continue');
-        return res.status(401).json({msg:'You need to login first'})
+        return res.status(401).json({msg:'You need to login first'});
     }
 
     req.session.returnUrl = req.originalUrl;
